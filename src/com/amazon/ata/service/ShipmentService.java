@@ -2,10 +2,7 @@ package com.amazon.ata.service;
 
 import com.amazon.ata.cost.CostStrategy;
 import com.amazon.ata.dao.PackagingDAO;
-import com.amazon.ata.types.FulfillmentCenter;
-import com.amazon.ata.types.Item;
-import com.amazon.ata.types.ShipmentCost;
-import com.amazon.ata.types.ShipmentOption;
+import com.amazon.ata.types.*;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -47,7 +44,7 @@ public class ShipmentService {
         try {
             List<ShipmentOption> results = this.packagingDAO.findShipmentOptions(item, fulfillmentCenter);
             return getLowestCostShipmentOption(results);
-        } catch (Exception e) {
+        } catch (Exception | Packaging.UnsupportedOperationsException e) {
             return null;
         }
     }

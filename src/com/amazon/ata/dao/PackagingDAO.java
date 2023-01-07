@@ -41,7 +41,7 @@ public class PackagingDAO {
      * @throws NoPackagingFitsItemException if the item doesn't fit in any packaging at the FC
      */
     public List<ShipmentOption> findShipmentOptions(Item item, FulfillmentCenter fulfillmentCenter)
-            throws UnknownFulfillmentCenterException, NoPackagingFitsItemException {
+            throws UnknownFulfillmentCenterException, NoPackagingFitsItemException, Packaging.UnsupportedOperationsException {
 
         // Check all FcPackagingOptions for a suitable Packaging in the given FulfillmentCenter
         List<ShipmentOption> result = new ArrayList<>();

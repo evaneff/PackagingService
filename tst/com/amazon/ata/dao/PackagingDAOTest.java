@@ -5,6 +5,7 @@ import com.amazon.ata.exceptions.NoPackagingFitsItemException;
 import com.amazon.ata.exceptions.UnknownFulfillmentCenterException;
 import com.amazon.ata.types.FulfillmentCenter;
 import com.amazon.ata.types.Item;
+import com.amazon.ata.types.Packaging;
 import com.amazon.ata.types.ShipmentOption;
 import org.junit.jupiter.api.Test;
 
@@ -51,7 +52,7 @@ class PackagingDAOTest {
     }
 
     @Test
-    public void findShipmentOptions_onePackagingAvailableAndFits_singlePackaging() throws Exception {
+    public void findShipmentOptions_onePackagingAvailableAndFits_singlePackaging() throws Exception, Packaging.UnsupportedOperationsException {
         // GIVEN
         packagingDAO = new PackagingDAO(datastore);
 
@@ -65,7 +66,7 @@ class PackagingDAOTest {
     }
 
     @Test
-    public void findShipmentOptions_twoPackagingAvailableAndOneFits_singlePackaging() throws Exception {
+    public void findShipmentOptions_twoPackagingAvailableAndOneFits_singlePackaging() throws Exception, Packaging.UnsupportedOperationsException {
         // GIVEN
         packagingDAO = new PackagingDAO(datastore);
 
@@ -79,7 +80,7 @@ class PackagingDAOTest {
     }
 
     @Test
-    public void findShipmentOptions_twoPackagingAvailableAndBothFit_twoPackagingOptions() throws Exception {
+    public void findShipmentOptions_twoPackagingAvailableAndBothFit_twoPackagingOptions() throws Exception, Packaging.UnsupportedOperationsException {
         // GIVEN
         packagingDAO = new PackagingDAO(datastore);
 
