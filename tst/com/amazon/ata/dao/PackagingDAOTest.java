@@ -93,6 +93,18 @@ class PackagingDAOTest {
                 + "for each.");
     }
 
+    @Test
+    public void findShipmentOptions_twoIdenticalPackagingOptions_returnsSingleOption() throws Exception, Packaging.UnsupportedOperationsException{
+        // GIVEN
+        packagingDAO = new PackagingDAO(datastore);
+
+        // WHEN
+        List<ShipmentOption> shipmentOptions = packagingDAO.findShipmentOptions(smallItem, iad2);
+
+        // THEN
+        assertEquals(1, shipmentOptions.size(), "Expected to not find duplicate shipment options");
+    }
+
     private Item createItem(String length, String width, String height) {
         return Item.builder()
                 .withAsin("B00TEST")
