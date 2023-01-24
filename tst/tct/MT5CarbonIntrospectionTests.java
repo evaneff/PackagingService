@@ -1,5 +1,6 @@
 package tct;
 
+import com.amazon.ata.cost.CarbonCostStrategy;
 import tct.basewrappers.BoxWrapper;
 import tct.basewrappers.CarbonCostStrategyWrapper;
 import tct.basewrappers.PolyBagWrapper;

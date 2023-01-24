@@ -56,13 +56,10 @@ public class PackagingDAO {
         // Check all FcPackagingOptions for a suitable Packaging in the given FulfillmentCenter
         List<ShipmentOption> result = new ArrayList<>();
         boolean fcFound = false;
-        //String fcCode = fulfillmentCenter.getFcCode();
         Set<Packaging> packagingOptions = fcPackagingOptions.get(fulfillmentCenter);
             if (packagingOptions != null) {
                 fcFound = true;
                 for (Packaging packaging : packagingOptions) {
-                //if (fcCode.equals(fulfillmentCenter.getFcCode())) {
-
                     if (packaging.canFitItem(item)) {
                         result.add(ShipmentOption.builder()
                                 .withItem(item)
