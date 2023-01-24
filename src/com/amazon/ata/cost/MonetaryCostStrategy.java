@@ -32,8 +32,7 @@ public class MonetaryCostStrategy implements CostStrategy {
             Box box = (Box) packaging;
             cost = box.getMass().multiply(materialCost)
                     .add(LABOR_COST);
-        }
-        else {
+        } else {
             PolyBag polyBag = (PolyBag) packaging;
             cost = polyBag.getMass().multiply(materialCost)
                     .add(LABOR_COST);

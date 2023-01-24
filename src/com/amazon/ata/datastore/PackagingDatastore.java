@@ -35,13 +35,10 @@ public class PackagingDatastore {
             createFcPackagingOption("IND1", Material.LAMINATED_PLASTIC, "2000"),
             createFcPackagingOption("IND1", Material.LAMINATED_PLASTIC, "5000"),
             createFcPackagingOption("ABE2", Material.LAMINATED_PLASTIC, "2000"),
-            createFcPackagingOption("ABE2", Material.LAMINATED_PLASTIC,"6000"),
+            createFcPackagingOption("ABE2", Material.LAMINATED_PLASTIC, "6000"),
             createFcPackagingOption("PDX1", Material.LAMINATED_PLASTIC, "5000"),
             createFcPackagingOption("PDX1", Material.LAMINATED_PLASTIC, "10000"),
             createFcPackagingOption("YOW4", Material.LAMINATED_PLASTIC, "5000")
-
-
-
     );
 
     private FcPackagingOption createFcPackagingOption(String fcCode, Material material, String volume) {
