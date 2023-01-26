@@ -58,11 +58,7 @@ public class PackagingDatastore {
     }
 
     public List<FcPackagingOption> getFcPackagingOptions() {
-        Set<FcPackagingOption> setOfPackagingOptions = new HashSet<>();
-        for (FcPackagingOption option : fcPackagingOptions) {
-            setOfPackagingOptions.add(option);
-        }
-        List<FcPackagingOption> updatedList = new ArrayList<>(setOfPackagingOptions);
-        return updatedList;
+
+        return fcPackagingOptions;
     }
 }
