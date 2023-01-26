@@ -48,13 +48,13 @@ public class ShipmentService {
             return getLowestCostShipmentOption(results);
         // Exception | Packaging.UnsupportedOperationsException e
         } catch (UnknownFulfillmentCenterException invalidFC) {
+            invalidFC.printStackTrace();
 
-
-        } catch (Packaging.UnsupportedOperationsException noPackagingAvailable){
-
+        } catch (Packaging.UnsupportedOperationsException noPackagingAvailable) {
+            noPackagingAvailable.printStackTrace();
 
         } catch (NoPackagingFitsItemException noPackagingFits) {
-
+            noPackagingFits.printStackTrace();
 
         }
         return null;
