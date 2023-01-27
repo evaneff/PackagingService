@@ -20,7 +20,8 @@ public class App {
         return new PackagingDAO(getPackagingDatastore());
     }
 
-    private static CostStrategy getCostStrategy() {return new WeightedCostStrategy(new MonetaryCostStrategy(), new CarbonCostStrategy());
+    private static CostStrategy getCostStrategy() { return new WeightedCostStrategy(new MonetaryCostStrategy(),
+                                                            new CarbonCostStrategy());
     }
 
     public static ShipmentService getShipmentService() {
