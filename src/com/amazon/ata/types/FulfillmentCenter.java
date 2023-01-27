@@ -29,8 +29,8 @@ public class FulfillmentCenter {
     @Override
     public String toString() {
         return "FulfillmentCenter{" +
-            "fcCode='" + fcCode + '\'' +
-            '}';
+                "fcCode='" + fcCode + '\'' +
+                '}';
     }
 
     @Override

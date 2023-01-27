@@ -55,7 +55,7 @@ public class FcPackagingOption {
 
         FcPackagingOption that = (FcPackagingOption) o;
         return Objects.equals(getFulfillmentCenter(), that.getFulfillmentCenter()) &&
-            Objects.equals(getPackaging(), that.getPackaging());
+                Objects.equals(getPackaging(), that.getPackaging());
     }
 
     @Override

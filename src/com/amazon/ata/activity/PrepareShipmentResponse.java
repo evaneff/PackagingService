@@ -57,7 +57,7 @@ public class PrepareShipmentResponse {
         }
         PrepareShipmentResponse that = (PrepareShipmentResponse) o;
         return getItem().equals(that.getItem()) && getPackaging().equals(that.getPackaging())
-                                                && getFulfillmentCenter().equals(that.getFulfillmentCenter());
+                && getFulfillmentCenter().equals(that.getFulfillmentCenter());
     }
 
     @Override

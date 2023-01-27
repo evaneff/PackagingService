@@ -92,3 +92,4 @@ public class Box extends Packaging {
         return Objects.hash(super.hashCode(), getLength(), getWidth(), getHeight());
     }
 }
+

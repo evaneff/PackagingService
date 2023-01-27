@@ -39,3 +39,4 @@ public class NoPackagingFitsItemException extends Exception {
         super(message, cause);
     }
 }
+

@@ -16,8 +16,9 @@ import java.util.*;
  */
 public class PackagingDAO {
     /**
-     * A list of fulfillment centers with the packaging options they provide.
+     * A list of fulfillment centers with a packaging options they provide.
      */
+    // used to be a List<FcPackingOptions>
     private Map<FulfillmentCenter, Set<Packaging>> fcPackagingOptions = new HashMap<>();
 
     /**
@@ -26,7 +27,6 @@ public class PackagingDAO {
      */
     public PackagingDAO(PackagingDatastore datastore) {
         List<FcPackagingOption> packagingOptions = new ArrayList<>(datastore.getFcPackagingOptions());
-
         for (FcPackagingOption option : packagingOptions) {
             if (fcPackagingOptions.containsKey(option.getFulfillmentCenter())) {
                 Set<Packaging> existingOptionSet = fcPackagingOptions.get(option.getFulfillmentCenter());
@@ -37,7 +37,6 @@ public class PackagingDAO {
                 fcPackagingOptions.put(option.getFulfillmentCenter(), newOptionSet);
             }
         }
-
     }
 
     /**
@@ -57,21 +56,19 @@ public class PackagingDAO {
         // Check all FcPackagingOptions for a suitable Packaging in the given FulfillmentCenter
         List<ShipmentOption> result = new ArrayList<>();
         boolean fcFound = false;
-        String fcCode = fulfillmentCenter.getFcCode();
         Set<Packaging> packagingOptions = fcPackagingOptions.get(fulfillmentCenter);
-            if (packagingOptions != null) {
-                fcFound = true;
-                for (Packaging packaging : packagingOptions) {
-                    if (packaging.canFitItem(item)) {
-                        System.out.println("Packaging found");
-                        result.add(ShipmentOption.builder()
-                                .withItem(item)
-                                .withPackaging(packaging)
-                                .withFulfillmentCenter(fulfillmentCenter)
-                                .build());
-                    }
+        if (packagingOptions != null) {
+            fcFound = true;
+            for (Packaging packaging : packagingOptions) {
+                if (packaging.canFitItem(item)) {
+                    result.add(ShipmentOption.builder()
+                            .withItem(item)
+                            .withPackaging(packaging)
+                            .withFulfillmentCenter(fulfillmentCenter)
+                            .build());
                 }
             }
+        }
 
         // Notify caller about unexpected results
         if (!fcFound) {

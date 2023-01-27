@@ -60,8 +60,8 @@ public class ShipmentOption {
 
         ShipmentOption other = (ShipmentOption) o;
         return item.equals(other.item) &&
-            packaging.equals(other.packaging) &&
-            fulfillmentCenter.equals(other.fulfillmentCenter);
+                packaging.equals(other.packaging) &&
+                fulfillmentCenter.equals(other.fulfillmentCenter);
     }
 
     @Override

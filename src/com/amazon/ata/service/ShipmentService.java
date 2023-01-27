@@ -46,7 +46,6 @@ public class ShipmentService {
         try {
             List<ShipmentOption> results = this.packagingDAO.findShipmentOptions(item, fulfillmentCenter);
             return getLowestCostShipmentOption(results);
-        // Exception | Packaging.UnsupportedOperationsException e
         } catch (UnknownFulfillmentCenterException invalidFC) {
             invalidFC.printStackTrace();
 
@@ -55,7 +54,6 @@ public class ShipmentService {
 
         } catch (NoPackagingFitsItemException noPackagingFits) {
             noPackagingFits.printStackTrace();
-
         }
         return null;
     }

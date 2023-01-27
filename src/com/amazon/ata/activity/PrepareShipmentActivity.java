@@ -18,7 +18,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
  * the appropriate shipment option.
  */
 public class PrepareShipmentActivity
-                      implements RequestHandler<PrepareShipmentRequest, String> {
+        implements RequestHandler<PrepareShipmentRequest, String> {
     /**
      * Shipment service used to retrieve shipment options.
      */
@@ -33,9 +33,9 @@ public class PrepareShipmentActivity
      * Instantiates a new PrepareShipmentActivity object.
      * @param shipmentService Shipment service used to retrieve shipment options.
      */
-     public PrepareShipmentActivity(ShipmentService shipmentService) {
-         this.shipmentService = shipmentService;
-     }
+    public PrepareShipmentActivity(ShipmentService shipmentService) {
+        this.shipmentService = shipmentService;
+    }
 
     /**
      * This method handles the incoming request by calling the shipment service and returning the
@@ -46,7 +46,7 @@ public class PrepareShipmentActivity
      * @throws Exception if the request can't be fulfilled
      */
     @Override
-        public String handleRequest(PrepareShipmentRequest request, Context context) {
+    public String handleRequest(PrepareShipmentRequest request, Context context) {
 
         Item item = Item.builder()
                 .withAsin(request.getAsin())

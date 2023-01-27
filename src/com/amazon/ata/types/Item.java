@@ -43,12 +43,12 @@ public class Item {
     @Override
     public String toString() {
         return "Item{" +
-            "asin='" + asin + '\'' +
-            ", description='" + description + '\'' +
-            ", length=" + length +
-            ", width=" + width +
-            ", height=" + height +
-            '}';
+                "asin='" + asin + '\'' +
+                ", description='" + description + '\'' +
+                ", length=" + length +
+                ", width=" + width +
+                ", height=" + height +
+                '}';
     }
 
     /**
