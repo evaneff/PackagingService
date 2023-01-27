@@ -9,18 +9,6 @@ import java.util.*;
  * Stores all configured packaging pairs for all fulfillment centers.
  */
 public class PackagingDatastore {
-    
-    FcPackagingOption newOption1 = createFcPackagingOption("IAD2", "5000");
-    FcPackagingOption newOption2 = createFcPackagingOption("YOW4", "2000");
-    FcPackagingOption newOption3 = createFcPackagingOption("YOW4", "5000");
-    FcPackagingOption newOption4 = createFcPackagingOption("YOW4", "10000");
-    FcPackagingOption newOption5 = createFcPackagingOption("IND1", "2000");
-    FcPackagingOption newOption6 = createFcPackagingOption("IND1", "5000");
-    FcPackagingOption newOption7 = createFcPackagingOption("ABE2", "2000");
-    FcPackagingOption newOption8 = createFcPackagingOption("ABE2", "6000");
-    FcPackagingOption newOption9 = createFcPackagingOption("PDX1", "5000");
-    FcPackagingOption newOption10 = createFcPackagingOption("PDX1", "10000");
-    FcPackagingOption newOption11 = createFcPackagingOption("YOW4", "5000");
 
     /**
      * The stored pairs of fulfillment centers to the packaging options they support.
@@ -36,20 +24,20 @@ public class PackagingDatastore {
             createFcPackagingOption("IAD2",  "20", "20", "20"),
             createFcPackagingOption("PDX1",  "40", "40", "40"),
             createFcPackagingOption("PDX1",  "60", "60", "60"),
-            createFcPackagingOption("PDX1",  "60", "60", "60")
-//            createFcPackagingOption("IAD2", "5000"),
-//            createFcPackagingOption("IAD2",  "10000"),
-//            createFcPackagingOption("IAD2",  "5000"),
-//            createFcPackagingOption("YOW4",  "2000"),
-//            createFcPackagingOption("YOW4",  "5000"),
-//            createFcPackagingOption("YOW4",  "10000"),
-//            createFcPackagingOption("IND1",  "2000"),
-//            createFcPackagingOption("IND1",  "5000"),
-//            createFcPackagingOption("ABE2",  "2000"),
-//            createFcPackagingOption("ABE2",  "6000"),
-//            createFcPackagingOption("PDX1",  "5000"),
-//            createFcPackagingOption("PDX1",  "10000"),
-//            createFcPackagingOption("YOW4",  "5000")
+            createFcPackagingOption("PDX1",  "60", "60", "60"),
+            createFcPackagingOption("IAD2", "2000"),
+            createFcPackagingOption("IAD2", "10000"),
+            createFcPackagingOption("IAD2", "5000"),
+            createFcPackagingOption("YOW4", "2000"),
+            createFcPackagingOption("YOW4", "5000"),
+            createFcPackagingOption("YOW4", "10000"),
+            createFcPackagingOption("IND1", "2000"),
+            createFcPackagingOption("IND1", "5000"),
+            createFcPackagingOption("ABE2", "2000"),
+            createFcPackagingOption("ABE2", "6000"),
+            createFcPackagingOption("PDX1", "5000"),
+            createFcPackagingOption("PDX1", "10000"),
+            createFcPackagingOption("YOW4", "5000")
             );
 
 

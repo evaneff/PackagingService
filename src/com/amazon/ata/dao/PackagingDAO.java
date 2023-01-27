@@ -26,14 +26,15 @@ public class PackagingDAO {
      */
     public PackagingDAO(PackagingDatastore datastore) {
         List<FcPackagingOption> packagingOptions = new ArrayList<>(datastore.getFcPackagingOptions());
+
         for (FcPackagingOption option : packagingOptions) {
             if (fcPackagingOptions.containsKey(option.getFulfillmentCenter())) {
-                Set<Packaging> optionSet = fcPackagingOptions.get(option.getFulfillmentCenter());
-                optionSet.add(option.getPackaging());
+                Set<Packaging> existingOptionSet = fcPackagingOptions.get(option.getFulfillmentCenter());
+                existingOptionSet.add(option.getPackaging());
             } else {
-                Set<Packaging> optionSet = new HashSet<>();
-                optionSet.add(option.getPackaging());
-                fcPackagingOptions.put(option.getFulfillmentCenter(), optionSet);
+                Set<Packaging> newOptionSet = new HashSet<>();
+                newOptionSet.add(option.getPackaging());
+                fcPackagingOptions.put(option.getFulfillmentCenter(), newOptionSet);
             }
         }
 
@@ -56,11 +57,13 @@ public class PackagingDAO {
         // Check all FcPackagingOptions for a suitable Packaging in the given FulfillmentCenter
         List<ShipmentOption> result = new ArrayList<>();
         boolean fcFound = false;
+        String fcCode = fulfillmentCenter.getFcCode();
         Set<Packaging> packagingOptions = fcPackagingOptions.get(fulfillmentCenter);
             if (packagingOptions != null) {
                 fcFound = true;
                 for (Packaging packaging : packagingOptions) {
                     if (packaging.canFitItem(item)) {
+                        System.out.println("Packaging found");
                         result.add(ShipmentOption.builder()
                                 .withItem(item)
                                 .withPackaging(packaging)
